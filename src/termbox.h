@@ -114,6 +114,15 @@ extern "C" {
 #define TB_CYAN    0x07
 #define TB_WHITE   0x08
 
+// Types of cursor appearance
+#define TB_CUR_DEF		0
+#define TB_CUR_NONE         	1
+#define TB_CUR_UNDERLINE	2
+#define TB_CUR_LOWER_THIRD	3
+#define TB_CUR_LOWER_HALF	4
+#define TB_CUR_TWO_THIRDS	5
+#define TB_CUR_BLOCK	        6
+
 //  Attributes, it is possible to use multiple attributes by combining them
 //  using bitwise OR ('|'). Although, colors cannot be combined. But you can
 //  combine attributes and a single color. See also struct tb_cell's fg and bg
@@ -193,6 +202,9 @@ SO_IMPORT void tb_present(void);
 // TB_HIDE_CURSOR as both coordinates, then the cursor will be hidden. Cursor
 // is hidden by default.
 SO_IMPORT void tb_set_cursor(int cx, int cy);
+
+// Sets the cursor to one of six possible appearances.
+SO_IMPORT void tb_set_cursor_mode(uint8_t mode);
 
 // Changes cell's parameters in the internal back buffer at the specified
 // position.

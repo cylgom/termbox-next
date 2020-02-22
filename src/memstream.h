@@ -16,5 +16,6 @@ void memstream_init(struct memstream* s, int fd, void* buffer, size_t len);
 void memstream_flush(struct memstream* s);
 void memstream_write(struct memstream* s, void* source, size_t len);
 void memstream_puts(struct memstream* s, const char* str);
+void memstream_putc(struct memstream* s, char c);
 
 #endif
