@@ -34,3 +34,9 @@ void memstream_puts(struct memstream* s, const char* str)
 {
 	memstream_write(s, (void*) str, strlen(str));
 }
+
+void memstream_putc(struct memstream* s, char c)
+{
+	s->data[s->pos] = c;
+	s->pos++;	
+}

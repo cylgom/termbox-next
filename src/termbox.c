@@ -280,6 +280,13 @@ void tb_set_cursor(int cx, int cy)
 	}
 }
 
+void tb_set_cursor_mode(uint8_t mode)
+{
+	memstream_puts(&write_buffer, "\033[?");
+	memstream_putc(&write_buffer, '0' + mode);
+	memstream_putc(&write_buffer, 'c');	
+}
+
 void tb_put_cell(int x, int y, const struct tb_cell* cell)
 {
 	if ((unsigned)x >= (unsigned)back_buffer.width)
