@@ -121,6 +121,7 @@ extern "C" {
 #define TB_BOLD      0x01000000
 #define TB_UNDERLINE 0x02000000
 #define TB_REVERSE   0x04000000
+#define TB_ITALIC    0x08000000
 
 // A cell, single conceptual entity on the terminal screen. The terminal screen
 // is basically a 2d array of cells. It has the following fields:

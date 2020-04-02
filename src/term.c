@@ -22,7 +22,7 @@ static const char* rxvt_256color_funcs[] =
 {
 	"\0337\033[?47h", "\033[2J\033[?47l\0338", "\033[?25h", "\033[?25l",
 	"\033[H\033[2J", "\033[m", "\033[4m", "\033[1m", "\033[5m", "\033[7m",
-	"\033=", "\033>", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
+	"\033=", "\033>", "", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
 };
 
 // Eterm
@@ -37,7 +37,7 @@ static const char* eterm_funcs[] =
 {
 	"\0337\033[?47h", "\033[2J\033[?47l\0338", "\033[?25h", "\033[?25l",
 	"\033[H\033[2J", "\033[m", "\033[4m", "\033[1m", "\033[5m", "\033[7m",
-	"", "", "", "",
+	"", "", "", "", "",
 };
 
 // screen
@@ -52,7 +52,7 @@ static const char* screen_funcs[] =
 {
 	"\033[?1049h", "\033[?1049l", "\033[34h\033[?25h", "\033[?25l",
 	"\033[H\033[J", "\033[m", "\033[4m", "\033[1m", "\033[5m", "\033[7m",
-	"\033[?1h\033=", "\033[?1l\033>", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
+	"\033[?1h\033=", "\033[?1l\033>", "", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
 };
 
 // rxvt-unicode
@@ -67,7 +67,7 @@ static const char* rxvt_unicode_funcs[] =
 {
 	"\033[?1049h", "\033[r\033[?1049l", "\033[?25h", "\033[?25l",
 	"\033[H\033[2J", "\033[m\033(B", "\033[4m", "\033[1m", "\033[5m",
-	"\033[7m", "\033=", "\033>", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
+	"\033[7m", "\033=", "\033>", "\033[3m", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
 };
 
 // linux
@@ -81,7 +81,7 @@ static const char* linux_keys[] =
 static const char* linux_funcs[] =
 {
 	"", "", "\033[?25h\033[?0c", "\033[?25l\033[?1c", "\033[H\033[J",
-	"\033[0;10m", "\033[4m", "\033[1m", "\033[5m", "\033[7m", "", "", "", "",
+	"\033[0;10m", "\033[4m", "\033[1m", "\033[5m", "\033[7m", "", "", "", "", "",
 };
 
 // xterm
@@ -96,7 +96,7 @@ static const char* xterm_funcs[] =
 {
 	"\033[?1049h", "\033[?1049l", "\033[?12l\033[?25h", "\033[?25l",
 	"\033[H\033[2J", "\033(B\033[m", "\033[4m", "\033[1m", "\033[5m", "\033[7m",
-	"\033[?1h\033=", "\033[?1l\033>", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
+	"\033[?1h\033=", "\033[?1l\033>", "\033[3m", ENTER_MOUSE_SEQ, EXIT_MOUSE_SEQ,
 };
 
 struct term
@@ -325,7 +325,7 @@ static const char* terminfo_copy_string(char* data, int str, int table)
 
 const int16_t ti_funcs[] =
 {
-	28, 40, 16, 13, 5, 39, 36, 27, 26, 34, 89, 88,
+	28, 40, 16, 13, 5, 39, 36, 27, 26, 34, 89, 88, 311,
 };
 
 const int16_t ti_keys[] =
