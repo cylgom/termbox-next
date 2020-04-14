@@ -7,7 +7,7 @@ BIND=../../bin
 	@echo "building source object $@"
 	@$(CC) $(INCL) $(FLAGS) -c -o $@ $<
 
-all:keyboard output paint truecolor
+all:keyboard output paint truecolor attributes
 
 keyboard:keyboard.o
 	@echo "compiling $@"
@@ -25,6 +25,10 @@ truecolor:truecolor.o
 	@echo "compiling $@"
 	@$(CC) $(INCL) $(FLAGS) -o $@ $@.o $(BIND)/termbox.a
 
+attributes:attributes.o
+	@echo "compiling $@"
+	@$(CC) $(INCL) $(FLAGS) -o $@ $@.o $(BIND)/termbox.a
+
 clean:
 	@echo "cleaning workspace"
-	@rm -rf *.o keyboard output paint truecolor
+	@rm -rf *.o keyboard output paint truecolor attributes

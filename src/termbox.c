@@ -718,6 +718,11 @@ static void send_attr(uint32_t fg, uint32_t bg)
 			memstream_puts(&write_buffer, funcs[T_UNDERLINE]);
 		}
 
+		if (fg & TB_ITALIC)
+		{
+			memstream_puts(&write_buffer, funcs[T_ITALIC]);
+		}
+
 		if ((fg & TB_REVERSE) || (bg & TB_REVERSE))
 		{
 			memstream_puts(&write_buffer, funcs[T_REVERSE]);

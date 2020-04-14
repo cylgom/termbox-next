@@ -62,6 +62,7 @@ funcs = [
 	"T_BOLD",		"bold",
 	"T_BLINK",		"blink",
 	"T_REVERSE",            "rev",
+	"T_ITALIC",		"sitm",
 	"T_ENTER_KEYPAD",	"smkx",
 	"T_EXIT_KEYPAD",	"rmkx"
 ]
