@@ -32,7 +32,7 @@ $(OBJD)/%.o:%.c
 $(BIND)/$(NAME).a:$(OBJS)
 	@echo "compiling $@"
 	@mkdir -p $(BIND)
-	@ar rvs $(BIND)/$(NAME).a $(OBJS)
+	@$(AR) rvs $(BIND)/$(NAME).a $(OBJS)
 
 clean:
 	@echo "cleaning workspace"
